@@ -1,0 +1,224 @@
+/* General Body Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #000; /* Black background */
+  color: #fff; /* White text color */
+  overflow-x: hidden;
+  text-align: center;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #222; /* Dark gray */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffd700; /* Gold */
+}
+
+nav .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav .nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+nav .nav-links li a:hover {
+  color: #ffd700; /* Gold hover effect */
+}
+
+/* Hamburger Menu */
+#hamburger-nav {
+  display: none; /* Hidden by default */
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Rotating Icons */
+.circle-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  animation: rotate 15s linear infinite;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0;
+}
+
+.icon img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.icon {
+  transform: rotate(calc(360deg / 10 * var(--i))) translate(180px);
+}
+
+.icon:hover img {
+  transform: scale(1.2);
+  filter: grayscale(0%);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Profile Picture */
+.section__pic-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid white;
+  z-index: 10; /* Ensure it is above rotating icons */
+}
+
+.section__pic-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Introductory Text */
+.section__text {
+  margin-top: 30px;
+}
+
+.section__text__p1 {
+  font-size: 1.5rem;
+  color: #f1f1f1;
+  margin: 0;
+}
+
+.title {
+  font-size: 3rem;
+  margin: 10px 0;
+  color: #ffd700; /* Gold color */
+}
+
+.section__text__p2 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #ccc;
+}
+
+.btn-container {
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  background-color: #555;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ff9800;
+}
+
+/* Social Links */
+#socials-container {
+  margin-top: 20px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  filter: grayscale(0%);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  nav .nav-links {
+    display: none;
+  }
+
+  #hamburger-nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .circle-container {
+    width: 300px;
+    height: 300px;
+  }
+
+  .icon img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .section__pic-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  #socials-container .social-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
